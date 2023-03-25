@@ -1,12 +1,17 @@
 import {
   Box,
+  Button,
+  Flex,
   Heading,
+  Image,
+  Input,
   Modal,
   ModalBody,
   ModalCloseButton,
   ModalContent,
   ModalHeader,
   ModalOverlay,
+  Select,
   Tag,
   TagLabel,
   TagLeftIcon,
@@ -27,7 +32,8 @@ import ImageCarousel from "./ImageCarousel";
 
 const Booking = () => {
   const { id } = useParams();
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen: isLocOpen , onOpen: onLocOpen, onClose: onLocClose } = useDisclosure()
+  const { isOpen: isFpOpen , onOpen: onFpOpen, onClose: onFpClose } = useDisclosure()
   const images = [
     "https://source.unsplash.com/1080x600/?hotel",
     "https://source.unsplash.com/1080x600/?random",
@@ -47,13 +53,13 @@ const Booking = () => {
           fontWeight="hairline"
           gap="1"
           textDecoration={"underline"}
-          onClick={onOpen}
+          onClick={onLocOpen}
           cursor={"pointer"}
         >
           <IoLocation size="24" />
           111, 111, Omprakash Nagar, Road No 3, Hatia, Basargad, Ranchi
         </Text>
-        <Modal onClose={onClose} size={"lg"} isOpen={isOpen}>
+        <Modal onClose={onLocClose} size={"lg"} isOpen={isLocOpen}>
           <ModalOverlay />
           <ModalContent>
             <ModalHeader>Location</ModalHeader>
@@ -124,10 +130,86 @@ const Booking = () => {
             <TagLabel>Gym</TagLabel>
           </Tag>
         </Text>
-        <Heading textAlign={'center'} size="xl" mt="5">
+        <Heading textAlign={"center"} size="xl" mt="5">
           Book Room's
         </Heading>
-        
+        <Flex
+          mt="12"
+          gap={"10px"}
+          wrap={"wrap"}
+          justifyContent={"space-evenly"}
+        >
+          <Box width="300px">
+            <Text fontWeight={"bold"}>Name:</Text>
+            <Input type="text" placeholder="Name" />
+          </Box>
+          <Box width="300px">
+            <Text fontWeight={"bold"}>Surname:</Text>
+            <Input type="text" placeholder="Surname" />
+          </Box>
+          <Box width="300px">
+            <Text fontWeight={"bold"}>Address:</Text>
+            <Input type="text" placeholder="Address" />
+          </Box>
+          <Box width="300px">
+            <Text fontWeight={"bold"}>Phone No.:</Text>
+            <Input type="tel" placeholder="9889988940" />
+          </Box>
+          <Box width="300px">
+            <Text fontWeight={"bold"}>Email:</Text>
+            <Input type="email" placeholder="abc@gmail.com" />
+          </Box>
+          <Box width="300px">
+            <Text fontWeight={"bold"}>Number of Rooms:</Text>
+            <Input type="number" placeholder="2" />
+          </Box>
+          <Box width="300px">
+            <Text fontWeight={"bold"}>Aadhar No.:</Text>
+            <Input type="text" placeholder="123456789012" />
+          </Box>
+          <Box width="300px">
+            <Text fontWeight={"bold"}>Check-In Date:</Text>
+            <Input type="date" />
+          </Box>
+          <Box width="300px">
+            <Text fontWeight={"bold"}>Check-Out Date:</Text>
+            <Input type="date" />
+          </Box>
+          <Box width={{ base: "90%", md: "45%" }}>
+            <Text fontWeight={"bold"}>Select State:</Text>
+            <Select placeholder="Select Room Type">
+              <option placeholder="option1">Option 1</option>
+            </Select>
+          </Box>
+          <Flex
+            mt="5"
+            w="100%"
+            alignItems={"center"}
+            justifyContent={"space-evenly"}
+          >
+            <Button bg="yellow.500" w="150px">
+              Clear
+            </Button>
+            <Button bg="blue.400" w="150px">
+              Book Room
+            </Button>
+          </Flex>
+        </Flex>
+        <Button mt="7" onClick={onFpOpen}>Click here to see room floor plan</Button>
+        <Modal onClose={onFpClose} size={"full"} isOpen={isFpOpen}>
+          <ModalOverlay />
+          <ModalContent>
+            <ModalHeader>Floor Plan</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody>
+              <Image
+                w="100%"
+                maxH='90vh'
+                src="https://fpg.roomsketcher.com/image/topic/6/image/Hotel-Room-3D-Layout.jpg"
+              />
+            </ModalBody>
+          </ModalContent>
+        </Modal>
       </Box>
     </Box>
   );

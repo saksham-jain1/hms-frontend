@@ -24,7 +24,7 @@ const Map = () => {
 
   return (
     <Flex wrap={'wrap'}>
-      <Box h="80vh" pos={"relative"} w={{ base: "100%", md: "50%" }}>
+      <Box h={{base:"50vh",md:"80vh"}} pos={"relative"} w={{ base: "100%", md: "50%" }}>
         <ReactDatamaps
           mapLayout={{
             noDataColor: "#D36418",

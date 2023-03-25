@@ -6,7 +6,7 @@ import history2 from '../resources/history2.png'
 const History = () => {
   return (
     <Box>
-    <Heading textAlign={'center'} my='5'>History of Namaste Stays</Heading>
+    <Heading textAlign={'center'} mx='7' mt='5'>History of Namaste Stays</Heading>
       <Text fontSize={'lg'} p='7' textAlign={"justify"}>
         Namaste Stays is a hotel management chain that has become a well-known
         name in the hospitality industry. The company was founded in 2016 by a

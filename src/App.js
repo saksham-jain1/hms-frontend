@@ -14,6 +14,10 @@ import Management from "./Components/Management";
 import Map from "./Components/Map";
 import MyDrawer from "./Components/MyDrawer";
 import Why from "./Components/Why";
+import Bill from "./Components/Bill";
+import Cancellation from "./Components/Cancellation";
+import CheckIn from "./Components/CheckIn";
+import CheckOut from "./Components/CheckOut";
 
 function App() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -46,6 +50,10 @@ function App() {
             <Route path="career" element={<Career />} />
             <Route path="contact" element={<Contact />} />
             <Route path="booking/:id?" element={<Booking />} />
+            <Route path="check-out" element={<CheckOut />} />
+            <Route path="check-in" element={<CheckIn />} />
+            <Route path="cancel" element={<Cancellation />} />
+            <Route path="bill" element={<Bill />} />
           </Route>
         </Routes>
 
