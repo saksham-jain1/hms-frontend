@@ -27,13 +27,19 @@ const MyDrawer = ({ isOpen, onClose }) => {
 
         <DrawerBody display={"flex"} flexDir="column" gap={"10px"}>
           <Box as={Button} width="100%">
-            <NavLink onClick={onClose} to="/">Home</NavLink>
+            <NavLink onClick={onClose} to="/">
+              Home
+            </NavLink>
           </Box>
           <Box as={Button} width="100%">
-            <NavLink onClick={onClose} to="location">Location Map</NavLink>
+            <NavLink onClick={onClose} to="location">
+              Location Map
+            </NavLink>
           </Box>
           <Box as={Button} width="100%">
-            <NavLink onClick={onClose} to="why">Why Namaste Stays</NavLink>
+            <NavLink onClick={onClose} to="why">
+              Why Namaste Stays
+            </NavLink>
           </Box>
           <Accordion allowToggle>
             <AccordionItem>
@@ -43,37 +49,68 @@ const MyDrawer = ({ isOpen, onClose }) => {
                   <AccordionIcon />
                 </Box>
               </AccordionButton>
-              <AccordionPanel pb={4} display={"flex"} flexDir="column" gap='10px'>
+              <AccordionPanel
+                pb={4}
+                display={"flex"}
+                flexDir="column"
+                gap="10px"
+              >
                 <Box as={Button} width="100%">
-                  <NavLink onClick={onClose} to='/history'>History</NavLink>
+                  <NavLink onClick={onClose} to="/history">
+                    History
+                  </NavLink>
                 </Box>
                 <Box as={Button} width="100%">
-                  <NavLink onClick={onClose} to='/finance'>Financial Results</NavLink>
+                  <NavLink onClick={onClose} to="/finance">
+                    Financial Results
+                  </NavLink>
                 </Box>
                 <Box as={Button} width="100%">
-                  <NavLink onClick={onClose} to='/management'>Management</NavLink>
+                  <NavLink onClick={onClose} to="/management">
+                    Management
+                  </NavLink>
                 </Box>
               </AccordionPanel>
             </AccordionItem>
           </Accordion>
           <Box as={Button} width="100%">
-            <NavLink onClick={onClose} to='/career'>Careers</NavLink>
+            <NavLink onClick={onClose} to="/career">
+              Careers
+            </NavLink>
           </Box>
           <Box as={Button} width="100%">
-            <NavLink onClick={onClose} to='/contact'>Contact Us</NavLink>
+            <NavLink onClick={onClose} to="/contact">
+              Contact Us
+            </NavLink>
           </Box>
           <Box as={Button} width="100%">
-            <NavLink onClick={onClose} to='/booking'>Booking</NavLink>
+            <NavLink onClick={onClose} to="/booking">
+              Booking
+            </NavLink>
           </Box>
           <Box as={Button} width="100%">
-            <NavLink onClick={onClose} to='/cancel'>Cancelation</NavLink>
+            <NavLink onClick={onClose} to="/cancel">
+              Cancelation
+            </NavLink>
           </Box>
           <Box as={Button} width="100%">
-            <NavLink onClick={onClose} to='/check-in'>Check-in</NavLink>
+            <NavLink onClick={onClose} to="/check-in">
+              Check-in
+            </NavLink>
           </Box>
           <Box as={Button} width="100%">
-            <NavLink onClick={onClose} to='/check-out'>Check-out</NavLink>
+            <NavLink onClick={onClose} to="/check-out">
+              Check-out
+            </NavLink>
           </Box>
+          <Box as={Button} width="100%">
+            <NavLink onClick={onClose} to="/mybookings">
+              My Bookings
+            </NavLink>
+          </Box>
+          <Button display={{ base: "flex", md: "none" }}>
+            <NavLink to="/login">Login/Sign-Up</NavLink>
+          </Button>
         </DrawerBody>
         <DrawerFooter></DrawerFooter>
       </DrawerContent>

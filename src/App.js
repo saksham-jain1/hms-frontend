@@ -18,6 +18,8 @@ import Bill from "./Components/Bill";
 import Cancellation from "./Components/Cancellation";
 import CheckIn from "./Components/CheckIn";
 import CheckOut from "./Components/CheckOut";
+import Login from "./Components/Login";
+import MyBookings from "./Components/MyBookings";
 
 function App() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -54,6 +56,8 @@ function App() {
             <Route path="check-in" element={<CheckIn />} />
             <Route path="cancel" element={<Cancellation />} />
             <Route path="bill" element={<Bill />} />
+            <Route path="login" element={<Login />} />
+            <Route path="mybookings" element={<MyBookings />} />
           </Route>
         </Routes>
 
