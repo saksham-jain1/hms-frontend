@@ -109,7 +109,7 @@ const MyDrawer = ({ isOpen, onClose }) => {
             </NavLink>
           </Box>
           <Button display={{ base: "flex", md: "none" }}>
-            <NavLink to="/login">Login/Sign-Up</NavLink>
+            <NavLink onClick={onClose} to="/login">Login/Sign-Up</NavLink>
           </Button>
         </DrawerBody>
         <DrawerFooter></DrawerFooter>
